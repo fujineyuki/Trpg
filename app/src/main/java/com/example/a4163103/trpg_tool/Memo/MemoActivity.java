@@ -121,4 +121,9 @@ public class MemoActivity extends Activity {
             }
         });
     }
+    //戻るボタン無効化
+    @Override
+    public void onBackPressed() {
+    }
+
 }
