@@ -16,19 +16,12 @@ import com.example.a4163103.trpg_tool.TabHostActivity;
 
 import java.util.UUID;
 
-/**
- * Created by 4163103 on 2017/10/19.
- */
-
-public class CreateMemo_Activity extends Activity {
+public class CreateMemoActivity extends Activity {
 
 
+    MemoOpenHelper helper = null;
 
-
-
-    Memo_Helper helper = null;
-
-    boolean newF = false;
+    boolean newFlag = false;
 
     String id = "";
 
@@ -37,18 +30,20 @@ public class CreateMemo_Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_memo);
 
-
-
-        // データベースから値を取得
         if(helper == null){
-            helper = new Memo_Helper(CreateMemo_Activity.this);
-
-
+            helper = new MemoOpenHelper(CreateMemoActivity.this);
         }
+
+
+
         Intent intent = this.getIntent();
-        if(id.equals("")) {
-            newF = true;
-        } else {
+
+        id = intent.getStringExtra("id");
+
+        if(id.equals("")){
+
+            newFlag = true;
+        }else{
 
             SQLiteDatabase db = helper.getWritableDatabase();
             try {
@@ -70,6 +65,7 @@ public class CreateMemo_Activity extends Activity {
             }
         }
 
+
         //登録ボタンpush
         Button registerButton = (Button) findViewById(R.id.register);
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -82,23 +78,27 @@ public class CreateMemo_Activity extends Activity {
 
                 SQLiteDatabase db = helper.getWritableDatabase();
                 try {
-                    if(newF){
+                    if(newFlag){
 
                         id = UUID.randomUUID().toString();
-                        //追加                                                            id+
-                        db.execSQL("insert into MEMO_TABLE(uuid, body) VALUES('"+ "', '"+ bodyStr +"')");
+
+                        db.execSQL("insert into MEMO_TABLE(uuid, body) VALUES('"+ id +"', '"+ bodyStr +"')");
                     }else{
-                        //更新                                                                            id+
-                        db.execSQL("update MEMO_TABLE set body = '"+ bodyStr +"' where uuid = '"+"'");
+
+                        db.execSQL("update MEMO_TABLE set body = '"+ bodyStr +"' where uuid = '"+id+"'");
                     }
                 } finally {
 
                     db.close();
                 }
 
+//                Intent intent = new Intent(CreateMemoActivity.this, com.example.a4163103.trpg_tool.Memo.ListActivity.class);
+//                startActivity(intent);
+
                 Intent intent1 = new Intent(getApplication(), TabHostActivity.class);
                 intent1.putExtra("data", 0);
                 startActivity(intent1);
+                finish();
 
             }
         });
@@ -111,12 +111,15 @@ public class CreateMemo_Activity extends Activity {
             @Override
             public void onClick(View v) {
 
+//                Intent intent = new Intent(CreateMemoActivity.this, com.example.a4163103.trpg_tool.Memo.ListActivity.class);
+//                startActivity(intent);
+
                 Intent intent1 = new Intent(getApplication(), TabHostActivity.class);
                 intent1.putExtra("data", 0);
                 startActivity(intent1);
+                finish();
 
             }
         });
     }
-
 }

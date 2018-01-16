@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <CheckBoxPreference
+            android:id="@+id/checkbox1"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:summary=""
+            android:key="test"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="list_preference_key_1"
+            android:title="list_preference_title_1"
+            android:dialogTitle="list_preference_title_1"
+            android:summary="Skill"
+            android:entries="@array/dice_01"
+            android:entryValues="@array/dice_01"
+            />
+
+</PreferenceScreen>

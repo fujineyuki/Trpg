@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.a4163103.trpg_tool.R;
+
 import java.util.Arrays;
 import java.util.Random;
 public class MainActivity extends Activity implements View.OnClickListener {

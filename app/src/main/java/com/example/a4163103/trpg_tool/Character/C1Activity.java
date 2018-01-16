@@ -36,6 +36,7 @@ public class C1Activity extends Activity {
                 Intent intent1 = new Intent(getApplication(), TabHostActivity.class);
                 intent1.putExtra("data", 2);
                 startActivity(intent1);
+                finish();
 
             }
         });

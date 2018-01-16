@@ -1,6 +1,7 @@
 package com.example.a4163103.trpg_tool.Dice;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 
 import com.example.a4163103.trpg_tool.R;
 
@@ -212,4 +214,24 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             builder.show();
         }
     }
+
+    //Android端末の戻るボタン
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("確認!!")
+                .setMessage("アプリを終了します。よろしいですか？")
+                .setPositiveButton("はい", new DialogInterface.OnClickListener() {
+                    @SuppressLint("MissingPermission")
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                       System.exit(0);
+                    }
+                })
+                .setNegativeButton("いいえ", null);
+        builder.show();
+
+    }
+
 }

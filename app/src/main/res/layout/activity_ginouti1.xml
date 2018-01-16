@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/NameField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:columnCount="8"
+        android:rowCount="4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameField">
+
+
+        <TextView
+            android:id="@+id/StrButton"
+            android:layout_width="60dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="STR" />
+
+        <TextView
+            android:id="@+id/StrText"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/DexButton"
+            android:layout_width="50dp"
+            android:layout_column="2"
+            android:layout_gravity="bottom"
+            android:layout_row="0"
+            android:text="DEX" />
+
+        <TextView
+            android:id="@+id/DexText"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/IntButton"
+            android:layout_width="50dp"
+            android:layout_column="4"
+            android:layout_gravity="left"
+            android:layout_row="0"
+            android:text="INT" />
+
+        <TextView
+            android:id="@+id/IntText"
+            android:layout_column="5"
+            android:layout_row="0"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/ConButton"
+            android:layout_width="60dp"
+            android:layout_column="6"
+            android:layout_row="0"
+            android:text="CON" />
+
+        <TextView
+            android:id="@+id/ConText"
+            android:layout_column="7"
+            android:layout_row="0"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/AppButton"
+            android:layout_width="60dp"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:layout_row="1"
+            android:text="APP" />
+
+        <TextView
+            android:id="@+id/AppText"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/PowButton"
+            android:layout_width="40dp"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:text="POW" />
+
+        <TextView
+            android:id="@+id/PowText"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/SizButton"
+            android:layout_width="50dp"
+            android:layout_column="4"
+            android:layout_row="1"
+            android:text="SIZ" />
+
+        <TextView
+            android:id="@+id/SizText"
+            android:layout_column="5"
+            android:layout_row="1"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/EduButton"
+            android:layout_width="60dp"
+            android:layout_column="6"
+            android:layout_row="1"
+            android:text="EDU" />
+
+        <TextView
+            android:id="@+id/EduText"
+            android:layout_column="7"
+            android:layout_row="1"
+            android:text="21" />
+
+        <TextView
+            android:id="@+id/dbButton"
+            android:layout_width="60dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="db" />
+
+        <TextView
+            android:id="@+id/dbText"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:text="+1d4 " />
+
+        <TextView
+            android:id="@+id/HpButton"
+            android:layout_width="40dp"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:text="HP" />
+
+        <TextView
+            android:id="@+id/HpText"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/MpButton"
+            android:layout_width="50dp"
+            android:layout_column="4"
+            android:layout_row="2"
+            android:text="MP" />
+
+        <TextView
+            android:id="@+id/MpText"
+            android:layout_column="5"
+            android:layout_row="2"
+            android:text="18" />
+
+        <TextView
+            android:id="@+id/SanButton"
+            android:layout_width="60dp"
+            android:layout_column="6"
+            android:layout_row="2"
+            android:text="SAN" />
+
+        <TextView
+            android:id="@+id/SanText"
+            android:layout_column="7"
+            android:layout_row="2"
+            android:text="90" />
+
+        <TextView
+            android:id="@+id/IdeaButton"
+            android:layout_width="70dp"
+            android:layout_column="0"
+            android:layout_gravity="top"
+            android:layout_row="3"
+            android:text="アイディア" />
+
+        <TextView
+            android:id="@+id/IdeaText"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:text="90 " />
+
+        <TextView
+            android:id="@+id/tisikiButton"
+            android:layout_width="40dp"
+            android:layout_column="2"
+            android:layout_row="3"
+            android:text="知識" />
+
+        <TextView
+            android:id="@+id/tisikiText"
+            android:layout_column="3"
+            android:layout_row="3"
+            android:text="99 " />
+
+        <TextView
+            android:id="@+id/RuckButton"
+            android:layout_width="60dp"
+            android:layout_column="4"
+            android:layout_row="3"
+            android:text="幸運" />
+
+        <TextView
+            android:id="@+id/RuckText"
+            android:layout_column="5"
+            android:layout_row="3"
+            android:text="90 " />
+
+        <TextView
+            android:id="@+id/MaxSanButton"
+            android:layout_width="60dp"
+            android:layout_column="6"
+            android:layout_gravity="top"
+            android:layout_row="3"
+            android:text="最大SAN" />
+
+        <TextView
+            android:id="@+id/MaxSanText"
+            android:layout_column="7"
+            android:layout_row="3"
+            android:text="99" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="技能"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+    <Button
+        android:id="@+id/ginouti"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="10dp"
+        android:text="技能値一覧へ"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/itemText"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:text="所持品一覧へ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ginouti" />
+
+    <Button
+        android:id="@+id/jyumonText"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:text="呪文一覧へ"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemText" />
+
+    <Button
+        android:id="@+id/hozon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="保存"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jyumonText" />
+
+
+</android.support.constraint.ConstraintLayout>
