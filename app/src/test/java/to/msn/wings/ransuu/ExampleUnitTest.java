@@ -1,4 +1,4 @@
-package com.example.a4163103.trpg_tool;
+package to.msn.wings.ransuu;
 
 import org.junit.Test;
 
