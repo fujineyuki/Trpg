@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-
 import com.example.a4163103.trpg_tool.R;
 import com.example.a4163103.trpg_tool.TabHostActivity;
 
@@ -35,6 +34,16 @@ public class Itiran_Activity extends Activity implements PrefKey {
     private ArrayAdapter<Integer> adapter00;
 
 
+    //戻るボタン
+    @Override
+    public void onBackPressed() {
+
+        Intent intent1 = new Intent(getApplication(), TabHostActivity.class);
+        intent1.putExtra("data", 2);
+        startActivity(intent1);
+        finish();
+
+    }
 
 
     @Override

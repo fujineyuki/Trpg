@@ -11,7 +11,6 @@ import android.preference.PreferenceScreen;
 
 import com.example.a4163103.trpg_tool.R;
 
-
 /**
  * Created by 4163103 on 2017/12/19.
  */

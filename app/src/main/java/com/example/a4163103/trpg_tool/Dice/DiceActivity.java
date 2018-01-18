@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import com.example.a4163103.trpg_tool.R;
 
 import java.util.Arrays;
@@ -226,7 +225,9 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                     @SuppressLint("MissingPermission")
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                       System.exit(0);
+                        //finish();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        //System.exit(0);
                     }
                 })
                 .setNegativeButton("いいえ", null);
