@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Trpg-feature-uyon.iml" filepath="$PROJECT_DIR$/Trpg-feature-uyon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Trpg.iml" filepath="$PROJECT_DIR$/Trpg.iml" />
+      <module fileurl="file://C:\Users\4163103\Documents\Trpg\Trpg-tool.iml" filepath="C:\Users\4163103\Documents\Trpg\Trpg-tool.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

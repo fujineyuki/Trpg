@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:id="@+id/back"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="300dp"
+        android:text="戻る"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Ginoutiitirann"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
+                android:id="@+id/gridLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:rowCount="70" >
+
+                <CheckBox
+                    android:id="@+id/checkbox1"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/iikurumetext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="0"
+                    android:text="言いくるめ"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp1"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="0"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="1"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/igakutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="1"
+                    android:text="医学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp2"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="1"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="2"
+                    android:checked="false" />
+
+
+                <TextView
+                    android:id="@+id/untentext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="2"
+                    android:text="運転（自動車）"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp3"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="2"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox4"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="4"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/teatetext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="4"
+                    android:text="応急手当"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp4"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="4"
+                    />
+
+                <TextView
+                    android:id="@+id/okaruttext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="5"
+                    android:text="オカルト"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp5"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="5"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox6"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="5"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kaihitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="6"
+                    android:text="回避"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp6"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="6"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox7"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="6"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kagakutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="7"
+                    android:text="化学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp7"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="7"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox8"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="7"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/keytext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="8"
+                    android:text="鍵開け"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp8"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="8"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox9"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="8"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kakusutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="9"
+                    android:text="隠す"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp9"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="9"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox10"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="9"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kakurerutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="10"
+                    android:text="隠れる"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp10"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="10"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox11"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="10"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kikaitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="11"
+                    android:text="機械修理"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp11"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="11"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox12"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="11"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/mimitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="12"
+                    android:text="聞き耳"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp12"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="12"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox13"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="12"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/sinwatext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="13"
+                    android:text="クトゥルフ神話"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp13"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="13"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbo14"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="13"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/arttext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="14"
+                    android:text="芸術"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp14"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="14"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox15"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="14"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/keiritext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="15"
+                    android:text="経理"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp15"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="15"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox16"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="15"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/koukotext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="16"
+                    android:text="考古学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp16"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="16"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox17"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="16"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/comtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="17"
+                    android:text="コンピュータ"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp17"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="17"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox18"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="17"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/sinobitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="18"
+                    android:text="忍び歩き"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp18"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="18"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox19"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="18"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/phototext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="19"
+                    android:text="写真"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp19"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="19"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox20"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="19"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/jyuukitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="20"
+                    android:text="重機械操作"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp20"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="20"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox21"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="20"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/jyoubatext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="21"
+                    android:text="乗馬"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp21"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="21"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox22"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="21"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/sinyoutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="22"
+                    android:text="信用"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp22"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="22"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox23"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="22"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/sinritext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="23"
+                    android:text="心理学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp23"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="23"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox24"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="23"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/jinnruitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="24"
+                    android:text="人類学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp24"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="24"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox25"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="24"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/negiritext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="25"
+                    android:text="値切り"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp25"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="25"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox26"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="25"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/hakubututext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="26"
+                    android:text="博物学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp26"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="26"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox27"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="26"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/buturitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="27"
+                    android:text="物理学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp27"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="27"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox28"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="27"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/hensoutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="28"
+                    android:text="変装"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp28"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="28"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox29"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="28"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/dennkitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="29"
+                    android:text="電気工学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp29"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="29"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox30"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="29"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/tenmontext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="30"
+                    android:text="天文学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp30"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="30"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox31"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="30"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/throwtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="31"
+                    android:text="投擲"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp31"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="31"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox32"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="31"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/swimtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="32"
+                    android:text="水泳"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp32"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="32"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox33"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="32"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/maketext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="33"
+                    android:text="製作"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp33"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="33"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox34"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="33"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/bunsekitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="34"
+                    android:text="精神分析"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp34"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="34"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox35"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="34"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/seibututext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="35"
+                    android:text="生物学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp35"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="35"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox36"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="35"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/settokutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="36"
+                    android:text="説得"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp36"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="36"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox37"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="36"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/soujyutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="37"
+                    android:text="操縦"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp37"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="37"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox38"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="37"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/tisitutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="38"
+                    android:text="地質学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp38"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="38"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox39"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="38"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/jumptext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="39"
+                    android:text="跳躍"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp39"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="39"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox40"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="39"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/tuisekitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="40"
+                    android:text="追跡"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp40"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="40"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox41"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="40"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/syuuritext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="41"
+                    android:text="電器修理"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp41"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="41"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox42"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="41"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/booktext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="42"
+                    android:text="図書館"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp42"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="42"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox43"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="42"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/navitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="43"
+                    android:text="ナビゲート"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp43"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="43"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox44"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="43"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/houritutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="44"
+                    android:text="法律"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp44"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="44"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox45"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="44"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/genngotext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="45"
+                    android:text="ほかの言語"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp45"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="45"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox46"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="45"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/bokokutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="46"
+                    android:text="母国語"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp46"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="46"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox47"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="46"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/artutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="47"
+                    android:text="マーシャルアーツ"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp47"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="47"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox48"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="47"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/mebositext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="48"
+                    android:text="目星"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp48"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="48"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox49"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="48"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/yakugakutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="49"
+                    android:text="薬学"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp49"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="49"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox50"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="49"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/rekisitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="50"
+                    android:text="歴史"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp50"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="50"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox51"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="50"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/iaitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="51"
+                    android:text="居合"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp51"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="51"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox52"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="51"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/unten2text"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="52"
+                    android:text="運転(その他)"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp52"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="52"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox53"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="52"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/budoutext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="53"
+                    android:text="武道"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp53"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="53"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox54"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="53"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/savaivaltext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="54"
+                    android:text="サバイバル"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp54"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="54"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox55"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="54"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/paratext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="55"
+                    android:text="パラシュート"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp55"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="55"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox56"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="55"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/handgantext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="56"
+                    android:text="拳銃"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp56"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="56"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox57"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="56"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/submachingantext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="57"
+                    android:text="サブマシンガン"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp57"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="57"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox58"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="57"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/shotgantext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="58"
+                    android:text="ショットガン"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp58"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="58"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox59"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="58"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/machingantext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="59"
+                    android:text="マシンガン"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp59"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="59"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox60"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="59"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/rifletext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="60"
+                    android:text="ライフル"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp60"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="60"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox61"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="60"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kicktext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="61"
+                    android:text="キック"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp61"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="61"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox62"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="61"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kumitukitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="62"
+                    android:text="組み付き"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp62"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="62"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox63"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="62"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/kobusitext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="63"
+                    android:text="こぶし"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp63"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="63"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox64"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="63"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/headtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="64"
+                    android:text="頭突き"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp64"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="64"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox65"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="64"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/otherAtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="65"
+                    android:text="その他技能【A】"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp65"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="65"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox66"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="65"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/otherBtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="66"
+                    android:text="その他技能【B】"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp66"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="66"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox67"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="66"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/otherCtext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="67"
+                    android:text="その他技能【C】"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp67"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="67"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox68"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="67"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/othertext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="68"
+                    android:text="その他技能【D】"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp68"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="68"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox69"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="68"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/touhanntext"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_column="1"
+                    android:layout_row="69"
+                    android:text="登攀"
+                    android:textSize="@dimen/font_big"/>
+
+                <Spinner
+                    android:id="@+id/sp69"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_column="2"
+                    android:layout_row="69"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkbox70"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:layout_column="0"
+                    android:layout_row="69"
+                    android:checked="false" />
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

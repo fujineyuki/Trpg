@@ -5,33 +5,36 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by 4163103 on 2017/10/19.
+ * Created by 4163103 on 2017/12/12.
  */
 
-public class Memo_Helper extends SQLiteOpenHelper {
+public class MemoOpenHelper extends SQLiteOpenHelper {
+
 
     static final private String DBName = "MEMO_DB";
+
     static final private int VERSION = 1;
 
-    public Memo_Helper(Context context){
+    public MemoOpenHelper(Context context){
         super(context, DBName, null, VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL("CREATE TABLE MEMO_TABLE (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "uuid TEXT, " +
                 "body TEXT)");
 
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        //テーブル削除
+
         db.execSQL("DROP TABLE IF EXISTS MEMO_TABLE");
 
         onCreate(db);
     }
-
 
 }
