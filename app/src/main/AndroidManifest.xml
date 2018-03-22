@@ -67,8 +67,28 @@
 
         </activity>
 
+        <activity android:name=".Character.syozi.Syozi_ListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
 
+        <activity android:name=".Character.syozi.Syozi_CreateMemoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.jyumon.Jumon_CreateMemoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.jyumon.Jumon_ListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
 
     </application>
