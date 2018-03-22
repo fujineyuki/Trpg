@@ -193,7 +193,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             noudou = sa2 - sa3;
             noudou = 50 + (noudou * 5);
             String string = String.valueOf(s);
-            if (noudou <= 0){w = s;w = 100;}
+            if (noudou <= 0){w = s;noudou = 100;}
             else if (noudou >= 100){ w = win;}
             else {
 
