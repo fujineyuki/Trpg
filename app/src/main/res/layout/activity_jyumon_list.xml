@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#58FAF4"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+
+        android:text="追加したメモは長押しで削除することができます。"
+        android:textAlignment="center"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+
+        android:text="作成したメモを一回タップすることで編集することができます。"
+        android:textAlignment="center"
+        android:textSize="11sp" />
+
+    <ListView
+        android:id="@+id/memoList"
+        android:background="#58FAF4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_weight="9"
+
+        />
+
+    <Button
+        android:id="@+id/newButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_ripple_effect"
+        android:text="メモを作成"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_ripple_effect"
+        android:text="戻る"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:textSize="30sp" />
+
+</LinearLayout>

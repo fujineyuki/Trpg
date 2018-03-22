@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.a4163103.trpg_tool.Character.jyumon.Jumon_ListActivity;
+import com.example.a4163103.trpg_tool.Character.syozi.Syozi_ListActivity;
 import com.example.a4163103.trpg_tool.R;
 
 
@@ -28,6 +30,36 @@ public class GinoutiActivity extends Activity {
                 finish();
             }
         });
+
+
+        //所持品
+        Button btn_S = (Button)findViewById(R.id.itemText);
+
+        btn_S.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GinoutiActivity.this, Syozi_ListActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+        //呪文
+        Button btn_J = (Button)findViewById(R.id.jyumonText);
+
+        btn_J.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GinoutiActivity.this, Jumon_ListActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
 
     }
 
