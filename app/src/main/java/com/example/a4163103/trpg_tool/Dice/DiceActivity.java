@@ -193,7 +193,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             Spinner item4 = (Spinner) findViewById(R.id.noudouSp);
 
             int sa3 = (int) item4.getSelectedItem();
-        	if(noudaisu <= 0)noudaisu = 100;
+
+
             noudou = sa2 - sa3;
             noudou = 50 + (noudou * 5);
             String string = String.valueOf(s);
