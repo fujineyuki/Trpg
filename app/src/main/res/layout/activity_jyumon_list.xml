@@ -48,4 +48,15 @@
         android:layout_marginRight="1dp"
         android:textSize="30sp" />
 
+    <Button
+        android:id="@+id/backbutton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/btn_ripple_effect"
+        android:text="戻る"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:textSize="30sp" />
+
 </LinearLayout>

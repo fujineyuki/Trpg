@@ -20,18 +20,22 @@ public class CharacterActivity extends Activity {
 
 
         //C1Activityに遷移するボタン
-        Button btn_c1 = (Button)findViewById(R.id.button);
+        Button btn_c1 = (Button) findViewById(R.id.button);
         btn_c1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplication(), C1Activity.class);
                 startActivity(intent);
+                finish();
+
             }
         });
-
-
     }
+
+
+
+
 
     //戻るボタン無効化
     @Override

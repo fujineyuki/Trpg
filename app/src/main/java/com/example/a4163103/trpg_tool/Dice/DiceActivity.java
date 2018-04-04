@@ -1,6 +1,7 @@
 package com.example.a4163103.trpg_tool.Dice;
 
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,17 +24,18 @@ public class DiceActivity extends Activity implements View.OnClickListener {
     private final static int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
     TextView tv2;
     TextView tv7;
-    Button button1;
-    Button button4;
-    Button button5;
+    ImageButton button1;
+    ImageButton button4;
+    ImageButton button5;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice);
 
         String q = new String();
-        tv2 = (TextView) findViewById(R.id.text2);;
+        tv2 = (TextView) findViewById(R.id.text2);
 
         Spinner spinner = (Spinner) findViewById(R.id.kahendaisu);
         int idx = spinner.getSelectedItemPosition();
@@ -40,11 +43,11 @@ public class DiceActivity extends Activity implements View.OnClickListener {
 
 
         q = "100面ダイス";
-        button1 = (Button) findViewById(R.id.button100);
+        button1 = (ImageButton) findViewById(R.id.button100);
         button1.setOnClickListener(this);
-        button4 = (Button) findViewById(R.id.kahensu);
+        button4 = (ImageButton) findViewById(R.id.kahensu);
         button4.setOnClickListener(this);
-        button5 = (Button) findViewById(R.id.taikoudaisu);
+        button5 = (ImageButton) findViewById(R.id.taikoudaisu);
         button5.setOnClickListener(this);
         tv2.setText(String.valueOf(q));
         ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
@@ -190,8 +193,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             Spinner item4 = (Spinner) findViewById(R.id.noudouSp);
 
             int sa3 = (int) item4.getSelectedItem();
-
-
+        	if(noudaisu <= 0)noudaisu = 100;
             noudou = sa2 - sa3;
             noudou = 50 + (noudou * 5);
             String string = String.valueOf(s);
@@ -212,4 +214,26 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             builder.show();
         }
     }
+
+    //Android端末の戻るボタン
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("確認!!")
+                .setMessage("アプリを終了します。よろしいですか？")
+                .setPositiveButton("はい", new DialogInterface.OnClickListener() {
+                    @SuppressLint("MissingPermission")
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //finish();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        //System.exit(0);
+                    }
+                })
+                .setNegativeButton("いいえ", null);
+        builder.show();
+
+    }
+
 }

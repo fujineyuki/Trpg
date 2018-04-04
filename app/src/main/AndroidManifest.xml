@@ -18,33 +18,77 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Memo.CreateMemo_Activity"
+        <activity android:name=".Memo.ListActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".Character.CharacterActivity"
+        <activity android:name=".Memo.CreateMemoActivity"
             android:screenOrientation="portrait">
 
         </activity>
+
 
         <activity android:name=".Dice.DiceActivity"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <activity android:name=".Memo.MemoActivity"
-            android:screenOrientation="portrait">
 
-        </activity>
-
-
-        <!--テスト用遷移先Activity-->
+        テスト用遷移先Activity
         <activity android:name=".Character.C1Activity"
             android:screenOrientation="portrait">
 
         </activity>
 
+
+
+
+        <activity android:name=".Character.CharacterActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.GinoutiActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.Itiran_Activity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.MyConfigActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity android:name=".Character.syozi.Syozi_ListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.syozi.Syozi_CreateMemoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.jyumon.Jumon_CreateMemoActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+
+        <activity android:name=".Character.jyumon.Jumon_ListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
 
     </application>
