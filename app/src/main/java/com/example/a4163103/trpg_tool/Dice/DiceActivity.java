@@ -185,7 +185,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             Spinner item3 = (Spinner) findViewById(R.id.zyudouSp);
 // 選択したアイテムを取得
             int sa2 = (int) item3.getSelectedItem();
-
+            boolean lost = false;
+            boolean winner = false;
             ArrayAdapter<Integer> adapter4 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
             adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Adapterにアイテムを追加
@@ -198,21 +199,43 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             noudou = sa2 - sa3;
             noudou = 50 + (noudou * 5);
             String string = String.valueOf(s);
-            if (noudou <= 0){w = s;}
-            else if (noudou >= 100){ w = win;}
+            if (noudou <= 0){lost = true;}
+            else if (noudou >= 100){ winner = true;}
             else {
 
                 if (noudaisu <= noudou) w = win;
                 else if (noudaisu > noudou) w = s;
             }
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
-            builder.show();
+            if(lost == false && winner == false) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }else if(lost == true){
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("対抗ダイスの結果は自動失敗です！！")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }else if(winner == true){
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("対抗ダイスの結果は自動成功です！！")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }
+            lost = false;
+            winner = false;
         }
     }
 
