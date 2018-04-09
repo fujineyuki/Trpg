@@ -35,6 +35,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
     ImageButton button5;
     SoundPool soundPool;    // 効果音を鳴らす本体（コンポ）
     int mp3a;
+    int mp3b;
+    int mphappy;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -126,6 +128,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
 
         // ③ 読込処理(CDを入れる)
         mp3a = soundPool.load(this, R.raw.spo_ge_saikoro_teburu01, 1);
+        mp3b = soundPool.load(this, R.raw.nc46002, 1);
+        mphappy = soundPool.load(this, R.raw.shakin1, 1);
 
 
     }
@@ -152,10 +156,11 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             }
             if (n >= 96) {
                 w = "ファンブル";
+                soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
             } else if (n <= 5) {
                 w = "クリティカル";
-            } else w = " ";
-            soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
+                soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
+            } else {w = " ";soundPool.play(mp3a,1f , 1f, 0, 0, 1f);}
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("今回のダイスは" + n + "\n" + w)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -246,6 +251,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                         });
                 builder.show();
             }else if(lost == true){
+                soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("対抗ダイスの結果は自動失敗です！！")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -255,7 +261,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                         });
                 builder.show();
             }else if(winner == true){
-
+                soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("対抗ダイスの結果は自動成功です！！")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
