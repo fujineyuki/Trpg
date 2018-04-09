@@ -4,6 +4,11 @@ package com.example.a4163103.trpg_tool.Dice;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaActionSound;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.Menu;
@@ -20,6 +25,7 @@ import com.example.a4163103.trpg_tool.R;
 import java.util.Arrays;
 import java.util.Random;
 
+
 public class DiceActivity extends Activity implements View.OnClickListener {
     private final static int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
     TextView tv2;
@@ -27,6 +33,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
     ImageButton button1;
     ImageButton button4;
     ImageButton button5;
+    SoundPool soundPool;    // 効果音を鳴らす本体（コンポ）
+    int mp3a;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -103,13 +111,34 @@ public class DiceActivity extends Activity implements View.OnClickListener {
         spinner4.setAdapter(adapter3);
 
 
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        } else {
+            AudioAttributes attr = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setAudioAttributes(attr)
+                    .setMaxStreams(5)
+                    .build();
+        }
+
+        // ③ 読込処理(CDを入れる)
+        mp3a = soundPool.load(this, R.raw.spo_ge_saikoro_teburu01, 1);
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+
         return true;
     }
+
+
 
 
     @Override
@@ -126,6 +155,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             } else if (n <= 5) {
                 w = "クリティカル";
             } else w = " ";
+            soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("今回のダイスは" + n + "\n" + w)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -161,7 +191,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
 
                 kaheng += sw;
             }
-
+            soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("今回のダイスは" + kaheng + "\n" + Arrays.toString(kahen))
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -195,7 +225,6 @@ public class DiceActivity extends Activity implements View.OnClickListener {
 
             int sa3 = (int) item4.getSelectedItem();
 
-
             noudou = sa2 - sa3;
             noudou = 50 + (noudou * 5);
             String string = String.valueOf(s);
@@ -207,6 +236,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                 else if (noudaisu > noudou) w = s;
             }
             if(lost == false && winner == false) {
+                soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -225,6 +255,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                         });
                 builder.show();
             }else if(winner == true){
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("対抗ダイスの結果は自動成功です！！")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -238,6 +269,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             winner = false;
         }
     }
+
 
     //Android端末の戻るボタン
     @Override
