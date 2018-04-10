@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.media.AudioAttributes;
 import android.media.AudioManager;
-import android.media.MediaActionSound;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,21 +14,19 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.a4163103.trpg_tool.R;
 
+import java.security.SecureRandom;
 import java.util.Arrays;
-import java.util.Random;
 
 
 public class DiceActivity extends Activity implements View.OnClickListener {
     private final static int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
     TextView tv2;
-    TextView tv7;
     ImageButton button1;
     ImageButton button4;
     ImageButton button5;
@@ -37,6 +34,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
     int mp3a;
     int mp3b;
     int mphappy;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -130,6 +128,9 @@ public class DiceActivity extends Activity implements View.OnClickListener {
         mp3a = soundPool.load(this, R.raw.spo_ge_saikoro_teburu01, 1);
         mp3b = soundPool.load(this, R.raw.nc46002, 1);
         mphappy = soundPool.load(this, R.raw.shakin1, 1);
+        SecureRandom random = new SecureRandom();
+        byte bytes[] = new byte[20];
+        random.nextBytes(bytes);
 
 
     }
@@ -148,7 +149,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == button1) {
-            Random r = new Random();
+            SecureRandom r = new SecureRandom();
             String w = new String();
             int n = r.nextInt(100);
             if (n == 0) {
@@ -162,7 +163,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
                 soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
             } else {w = " ";soundPool.play(mp3a,1f , 1f, 0, 0, 1f);}
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("今回のダイスは" + n + "\n" + w)
+            builder.setTitle("結果").
+                     setMessage("今回のダイスは" + n + "\n" + w)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -183,7 +185,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             int sa1 = (int) item2.getSelectedItem();
 
 
-            Random daisu = new Random();
+            SecureRandom daisu = new SecureRandom();
             int kahen[] = new int[sa];
             int kaheng = 0;
             for (int i = 0; i < sa; i++) {
@@ -198,7 +200,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             }
             soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("今回のダイスは" + kaheng + "\n" + Arrays.toString(kahen))
+            builder.setTitle("結果")
+                    .setMessage("今回のダイスは" + kaheng + "\n" + Arrays.toString(kahen))
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -209,7 +212,7 @@ public class DiceActivity extends Activity implements View.OnClickListener {
 
         } else if (v == button5) {
 
-            Random r = new Random();
+            SecureRandom r = new SecureRandom();
             String w = new String();
             String s = "失敗";
             String win = "成功";
@@ -243,7 +246,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             if(lost == false && winner == false) {
                 soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -253,7 +257,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             }else if(lost == true){
                 soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("対抗ダイスの結果は自動失敗です！！")
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は自動失敗です！！")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -263,7 +268,8 @@ public class DiceActivity extends Activity implements View.OnClickListener {
             }else if(winner == true){
                 soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("対抗ダイスの結果は自動成功です！！")
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は自動成功です！！")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
