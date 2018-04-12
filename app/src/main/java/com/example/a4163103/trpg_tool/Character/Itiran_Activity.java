@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import com.example.a4163103.trpg_tool.R;
@@ -56,7 +57,7 @@ public class Itiran_Activity extends Activity implements PrefKey {
 
         setTitle("技能値");
 
-        Button btn4 = (Button) findViewById(R.id.back);
+        ImageButton btn4 = (ImageButton) findViewById(R.id.back);
 
         btn4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -805,98 +806,6 @@ public class Itiran_Activity extends Activity implements PrefKey {
         }
         return 0;
     }
-    /*----------------------------------------------------------------------
-    public class Ginou extends Activity {
-        com.example.a4163103.trpg_tool.Character.Status status;
-
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_ginouti1);
-
-            //グローバル変数を取得
-            status = (com.example.a4163103.trpg_tool.Character.Status) this.getApplication();
-            //初期化
-            status.StatusAllInit();
-        }
-
-        private Button.OnClickListener NextActivity = new Button.OnClickListener() {
-            public void onClick(View v) {
-                //現在の技能値の合計を算出
-                NowPoint =
-                        spinner011 +
-                        spinner012 +
-                        spinner013 +
-                        spinner014 +
-                        spinner015 +
-                        spinner016 +
-                        spinner017 +
-                        spinner018 +
-                        spinner019 +
-                        spinner0110 +
-                        spinner0111 +
-                        spinner0112 +
-                        spinner0113 +
-                        spinner0114 +
-                        spinner0115 +
-                        spinner0116 +
-                        spinner0117 +
-                        spinner0118 +
-                        spinner0119 +
-                        spinner0120 +
-                        spinner0121 +
-                        spinner0122 +
-                        spinner0123 +
-                        spinner0124 +
-                        spinner0125 +
-                        spinner0126 +
-                        spinner0127 +
-                        spinner0128 +
-                        spinner051 +
-                        spinner052 +
-                        spinner053 +
-                        spinner054 +
-                        spinner055 +
-                        spinner056 +
-                        spinner057 +
-                        spinner058 +
-                        spinner059 +
-                        spinner151 +
-                        spinner152 +
-                        spinner153 +
-                        spinner154 +
-                        spinner155 +
-                        spinner201 +
-                        spinner202 +
-                        spinner203 +
-                        spinner204 +
-                        spinner205 +
-                        spinner251 +
-                        spinner252 +
-                        spinner253 +
-                        spinner254 +
-                        spinner255 +
-                        spinner256 +
-                        spinner257 +
-                        spinner258 +
-                        spinner259 +
-                        spinner301 +
-                        spinner302 +
-                        spinner401 +
-                        spinner501 +
-                        spinner001 +
-                        spinner002 ;
-
-                //インテントの生成
-                Intent intent = new Intent(MainActivity.this, SubActivity.class);
-                //アクティビティの起動
-                startActivity(intent);
-            }
-        };
-    }
-
-    ----------------------------------------------------------------------*/
-
 }
 
 
