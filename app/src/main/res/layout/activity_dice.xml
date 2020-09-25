@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#ffffff">
+
+
+    <ImageButton
+        android:id="@+id/button100"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:background="#ffff"
+        android:src="@drawable/dicerollbutton"
+        app:srcCompat="@drawable/dicerollbutton" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/button100"
+        android:textColor="@color/colorAccent"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/kahensu"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/button100"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/variablebutton"
+        app:srcCompat="@drawable/variablebutton" />
+
+    <Spinner
+        android:id="@+id/kahenkosuu"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/textView3"
+        android:layout_alignParentStart="true"
+        android:textSize="5dp" />
+
+    <Spinner
+        android:id="@+id/zyudouSp"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_alignBottom="@+id/noudouSp"
+        android:layout_toStartOf="@+id/noudouSp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/noudouSp"
+        android:text="受動"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="125dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:text="能動"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/kahendaisu"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_alignTop="@+id/kahenkosuu"
+        android:layout_toEndOf="@+id/kahenkosuu"
+        android:entries="@array/list1"
+        android:textSize="5dp" />
+
+    <Spinner
+        android:id="@+id/noudouSp"
+        android:layout_width="125dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/textView3" />
+
+    <ImageButton
+        android:id="@+id/taikoudaisu"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textView6"
+        android:src="@drawable/oppositiondicebutton"
+        app:srcCompat="@drawable/oppositiondicebutton" />
+
+
+</RelativeLayout>

@@ -1,0 +1,307 @@
+package com.example.a4163103.trpg_tool.Dice;
+
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.example.a4163103.trpg_tool.R;
+
+import java.security.SecureRandom;
+import java.util.Arrays;
+
+
+public class DiceActivity extends Activity implements View.OnClickListener {
+    private final static int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
+    TextView tv2;
+    ImageButton button1;
+    ImageButton button4;
+    ImageButton button5;
+    SoundPool soundPool;    // 効果音を鳴らす本体（コンポ）
+    int mp3a;
+    int mp3b;
+    int mphappy;
+
+
+    @SuppressLint("WrongViewCast")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dice);
+
+        String q = new String();
+        tv2 = (TextView) findViewById(R.id.text2);
+
+        Spinner spinner = (Spinner) findViewById(R.id.kahendaisu);
+        int idx = spinner.getSelectedItemPosition();
+        int o = idx;
+
+
+        q = "100面ダイス";
+        button1 = (ImageButton) findViewById(R.id.button100);
+        button1.setOnClickListener(this);
+        button4 = (ImageButton) findViewById(R.id.kahensu);
+        button4.setOnClickListener(this);
+        button5 = (ImageButton) findViewById(R.id.taikoudaisu);
+        button5.setOnClickListener(this);
+        tv2.setText(String.valueOf(q));
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+        adapter.add(1);
+        adapter.add(2);
+        adapter.add(3);
+        adapter.add(4);
+        adapter.add(5);
+        adapter.add(6);
+        adapter.add(8);
+        adapter.add(10);
+        adapter.add(12);
+        adapter.add(15);
+        adapter.add(18);
+        adapter.add(24);
+        Spinner spinner1 = (Spinner) findViewById(R.id.kahenkosuu);
+        spinner1.setAdapter(adapter);
+
+        ArrayAdapter<Integer> adapter1 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+        adapter1.add(2);
+        adapter1.add(3);
+        adapter1.add(4);
+        adapter1.add(5);
+        adapter1.add(6);
+        adapter1.add(7);
+        adapter1.add(8);
+        adapter1.add(9);
+        adapter1.add(10);
+        adapter1.add(12);
+        adapter1.add(20);
+        adapter1.add(100);
+        Spinner spinner2 = (Spinner) findViewById(R.id.kahendaisu);
+
+        spinner2.setAdapter(adapter1);
+
+
+        ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+        for (int i = 3; i <= 40; i++) adapter2.add(i);
+        Spinner spinner3 = (Spinner) findViewById(R.id.zyudouSp);
+        spinner3.setAdapter(adapter2);
+
+        ArrayAdapter<Integer> adapter3 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+        for (int i = 3; i <= 40; i++) adapter3.add(i);
+        Spinner spinner4 = (Spinner) findViewById(R.id.noudouSp);
+        spinner4.setAdapter(adapter3);
+
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            soundPool = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        } else {
+            AudioAttributes attr = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_MEDIA)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                    .build();
+            soundPool = new SoundPool.Builder()
+                    .setAudioAttributes(attr)
+                    .setMaxStreams(5)
+                    .build();
+        }
+
+        // ③ 読込処理(CDを入れる)
+        mp3a = soundPool.load(this, R.raw.spo_ge_saikoro_teburu01, 1);
+        mp3b = soundPool.load(this, R.raw.nc46002, 1);
+        mphappy = soundPool.load(this, R.raw.shakin1, 1);
+        SecureRandom random = new SecureRandom();
+        byte bytes[] = new byte[20];
+        random.nextBytes(bytes);
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+
+
+        return true;
+    }
+
+
+
+
+    @Override
+    public void onClick(View v) {
+        if (v == button1) {
+            SecureRandom r = new SecureRandom();
+            String w = new String();
+            int n = r.nextInt(100);
+            if (n == 0) {
+                n = 100;
+            }
+            if (n >= 96) {
+                w = "ファンブル";
+                soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
+            } else if (n <= 5) {
+                w = "クリティカル";
+                soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
+            } else {w = " ";soundPool.play(mp3a,1f , 1f, 0, 0, 1f);}
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("結果").
+                     setMessage("今回のダイスは" + n + "\n" + w)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+            builder.show();
+        }else if (v == button4) {
+            Spinner item = (Spinner) findViewById(R.id.kahenkosuu);
+// 選択したアイテムを取得
+            int sa = (int) item.getSelectedItem();
+
+            ArrayAdapter<Integer> adapter2 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+            adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+
+            Spinner item2 = (Spinner) findViewById(R.id.kahendaisu);
+// 選択したアイテムを取得
+            int sa1 = (int) item2.getSelectedItem();
+
+
+            SecureRandom daisu = new SecureRandom();
+            int kahen[] = new int[sa];
+            int kaheng = 0;
+            for (int i = 0; i < sa; i++) {
+                int sw = daisu.nextInt(sa1);
+                sw++;
+                kahen[i] = sw;
+
+                adapter2.add(kahen[i]);
+
+
+                kaheng += sw;
+            }
+            soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("結果")
+                    .setMessage("今回のダイスは" + kaheng + "\n" + Arrays.toString(kahen))
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+            builder.show();
+
+
+        } else if (v == button5) {
+
+            SecureRandom r = new SecureRandom();
+            String w = new String();
+            String s = "失敗";
+            String win = "成功";
+            int noudaisu = r.nextInt(100);
+            int noudou;
+            ArrayAdapter<Integer> adapter3 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+            adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            Spinner item3 = (Spinner) findViewById(R.id.zyudouSp);
+// 選択したアイテムを取得
+            int sa2 = (int) item3.getSelectedItem();
+            boolean lost = false;
+            boolean winner = false;
+            ArrayAdapter<Integer> adapter4 = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item);
+            adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Adapterにアイテムを追加
+
+            Spinner item4 = (Spinner) findViewById(R.id.noudouSp);
+
+            int sa3 = (int) item4.getSelectedItem();
+
+            noudou = sa2 - sa3;
+            noudou = 50 + (noudou * 5);
+            String string = String.valueOf(s);
+            if (noudou <= 0){lost = true;}
+            else if (noudou >= 100){ winner = true;}
+            else {
+
+                if (noudaisu <= noudou) w = win;
+                else if (noudaisu > noudou) w = s;
+            }
+            if(lost == false && winner == false) {
+                soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は" + noudaisu + "\n" + w)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }else if(lost == true){
+                soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は自動失敗です！！")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }else if(winner == true){
+                soundPool.play(mphappy,1f , 1f, 0, 0, 1f);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("結果")
+                        .setMessage("対抗ダイスの結果は自動成功です！！")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                builder.show();
+            }
+            lost = false;
+            winner = false;
+        }
+    }
+
+
+    //Android端末の戻るボタン
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("確認!!")
+                .setMessage("アプリを終了します。よろしいですか？")
+                .setPositiveButton("はい", new DialogInterface.OnClickListener() {
+                    @SuppressLint("MissingPermission")
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //finish();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+                        //System.exit(0);
+                    }
+                })
+                .setNegativeButton("いいえ", null);
+        builder.show();
+
+    }
+
+}
